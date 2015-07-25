@@ -80,6 +80,9 @@ class Icon(window._Window):
 
         return False
 
+    def handle_Expose(self, e):
+        self.systray.draw()
+
     def handle_DestroyNotify(self, event):
         wid = event.window
         del(self.qtile.windowMap[wid])
